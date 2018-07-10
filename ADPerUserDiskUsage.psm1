@@ -242,8 +242,7 @@
         }
         #endregion
 
-        If($PSBoundParameters['Debug'])
-        {$Params | Out-String | Write-Debug}
+        $Params | Out-String | Write-Debug
 
         $UserList = Get-ADUser @Params
 
@@ -254,11 +253,9 @@
 
         foreach ($User in $UserList) {
 
-            If($PSBoundParameters['Debug'])
-            {$User | Write-Debug}
+            $User | Write-Debug
 
-            If($PSBoundParameters['Verbose'])
-            {Write-Verbose -Message "User: $($User.Name)"}
+            Write-Verbose -Message "User: $($User.Name)"
 
             If(($PSBoundParameters['ProgressBar']) -and ($UserList.Count -gt 1))
             {
@@ -304,25 +301,20 @@
                 Write-Progress @Params
             }
 
-            If($PSBoundParameters['Verbose'])
-            {Write-Verbose -Message 'Computing Profiles disk usage...'}
+            Write-Verbose -Message 'Computing Profiles disk usage...'
 
             If($User.ProfilePath)
             {
                 $ProfileComputerName = ($User.ProfilePath -split '\\')[2]
                 $ProfileShareName = ($User.ProfilePath -split '\\')[3]
 
-                If($PSBoundParameters['Debug'])
-                {
-                    $ProfileComputerName | Write-Debug
-                    $ProfileShareName | Write-Debug
-                }
+                $ProfileComputerName | Write-Debug
+                $ProfileShareName | Write-Debug
 
                 $Filter = 'Name like "%{0}%"' -f $ProfileShareName
                 $ProfileLiteralPathList = (Get-CimInstance -ComputerName $ProfileComputerName -ClassName Win32_Share -Filter $Filter).Path
 
-                If($PSBoundParameters['Debug'])
-                {$ProfileLiteralPathList | Out-String | Write-Debug}
+                $ProfileLiteralPathList | Out-String | Write-Debug
 
                 If($ProfileLiteralPathList)
                 {
@@ -392,25 +384,20 @@
                 Write-Progress @Params
             }
 
-            If($PSBoundParameters['Verbose'])
-            {Write-Verbose -Message 'Computing Home Directory disk usage...'}
+            Write-Verbose -Message 'Computing Home Directory disk usage...'
 
             If($User.HomeDirectory)
             {
                 $HomeComputerName = ($User.HomeDirectory -split '\\')[2]
                 $HomeShareName = ($User.HomeDirectory -split '\\')[3]
 
-                If($PSBoundParameters['Debug'])
-                {
-                    $HomeComputerName | Write-Debug
-                    $HomeShareName | Write-Debug
-                }
+                $HomeComputerName | Write-Debug
+                $HomeShareName | Write-Debug
 
                 $Filter = 'Name like "%{0}%"' -f $HomeShareName
                 $HomeLiteralPath = (Get-CimInstance -ComputerName $HomeComputerName -ClassName Win32_Share -Filter $Filter).Path
 
-                If($PSBoundParameters['Debug'])
-                {$HomeLiteralPath | Out-String | Write-Debug}
+                $HomeLiteralPath | Out-String | Write-Debug
 
                 if ($HomeLiteralPath) {
                     $HomeSize = Invoke-Command -ComputerName $HomeComputerName {
