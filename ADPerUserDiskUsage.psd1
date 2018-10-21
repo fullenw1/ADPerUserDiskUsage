@@ -9,31 +9,31 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule        = 'ADPerUserDiskUsage.psm1'
+    RootModule           = 'ADPerUserDiskUsage.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.0.0'
+    ModuleVersion        = '1.0.0'
 
     # Supported PSEditions
-    # CompatiblePSEditions = @()
+    CompatiblePSEditions = @('Desktop')
 
     # ID used to uniquely identify this module
-    GUID              = '68041f10-dde0-413f-9c81-8333ecc3342d'
+    GUID                 = '68041f10-dde0-413f-9c81-8333ecc3342d'
 
     # Author of this module
-    Author            = 'Luc FULLENWARTH'
+    Author               = 'Luc FULLENWARTH'
 
     # Company or vendor of this module
-    CompanyName       = 'ITLuke'
+    CompanyName          = 'ITLuke'
 
     # Copyright statement for this module
-    Copyright         = '(c) 2018 Luc FULLENWARTH. All rights reserved.'
+    Copyright            = '(c) 2018 Luc FULLENWARTH. All rights reserved.'
 
     # Description of the functionality provided by this module
-    Description       = 'Get the disk usage for each Active Directory user including the home directory and all profiles versions'
+    Description          = 'Get the disk usage for each Active Directory user including the home directory and all profiles versions'
 
     # Minimum version of the Windows PowerShell engine required by this module
-    # PowerShellVersion = ''
+    PowerShellVersion    = '4.0'
 
     # Name of the Windows PowerShell host required by this module
     # PowerShellHostName = ''
@@ -51,7 +51,7 @@
     # ProcessorArchitecture = ''
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules   = @('ActiveDirectory')
+    RequiredModules      = @('ActiveDirectory')
 
     # Assemblies that must be loaded prior to importing this module
     # RequiredAssemblies = @()
@@ -69,16 +69,16 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = '*'
+    FunctionsToExport    = '*'
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-    CmdletsToExport   = '*'
+    CmdletsToExport      = '*'
 
     # Variables to export from this module
-    VariablesToExport = '*'
+    VariablesToExport    = '*'
 
     # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-    AliasesToExport   = '*'
+    AliasesToExport      = '*'
 
     # DSC resources to export from this module
     # DscResourcesToExport = @()
@@ -90,7 +90,7 @@
     # FileList = @()
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
-    PrivateData       = @{
+    PrivateData          = @{
 
         PSData = @{
 
