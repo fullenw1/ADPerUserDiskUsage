@@ -95,7 +95,7 @@
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags       = @('PSModule', 'PSEdition_Desktop', 'Windows', 'Active Directory', 'User', 'Storage')
+            Tags       = @('PSModule', 'PSEdition_Desktop', 'Windows', 'Active Directory', 'User', 'ADUser', 'Storage')
 
             # A URL to the license for this module.
             LicenseUri = 'https://github.com/fullenw1/ADPerUserDiskUsage/blob/master/LICENSE'
